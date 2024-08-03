@@ -6,7 +6,7 @@ const path = require('path');
 const fs = require('fs');
 
 const REPO_URL = "https://github.com/LukaNikolaisvili/GITHUB-BOT.git";
-const REPO_DIR = "/var/jenkins_home/workspace/GITHUB-BOT/GITHUB-BOT";
+const REPO_DIR = "/var/jenkins_home/workspace/GITHUB-BOT";
 const FILE_PATH = path.join(REPO_DIR, 'output.txt');
 
 // Function to execute shell commands

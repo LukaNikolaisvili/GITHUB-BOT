@@ -2,7 +2,7 @@
 
 # Define the repository URL and directory
 REPO_URL="https://github.com/LukaNikolaisvili/GITHUB-BOT.git"
-REPO_DIR="/var/jenkins_home/workspace/GITHUB-BOT/GITHUB-BOT"
+REPO_DIR="/var/jenkins_home/workspace/GITHUB-BOT"
 
 # Ensure the repository directory is safe for Git
 git config --global --add safe.directory $REPO_DIR
@@ -10,7 +10,7 @@ git config --global --add safe.directory $REPO_DIR
 # Check if the repository directory exists
 if [ ! -d "$REPO_DIR" ]; then
   echo "Cloning repository..."
-  git clone https://${GITHUB_TOKEN}@github.com/LukaNikolaisvili/GITHUB-BOT.git $REPO_DIR
+  git clone https://${GITHUB_TOKEN}@github.com/LukaNikolaisvili/github_bot.git $REPO_DIR
 else
   echo "Repository already exists. Pulling latest changes..."
   cd $REPO_DIR || exit 1
@@ -39,3 +39,4 @@ fi
 
 # Execute the Node.js script
 node /var/jenkins_home/workspace/GITHUB_BOT/GITHUB-BOT/index.js
+
