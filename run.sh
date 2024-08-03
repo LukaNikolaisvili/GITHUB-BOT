@@ -10,11 +10,10 @@ git config --global --add safe.directory $REPO_DIR
 # Check if the repository directory exists
 if [ ! -d "$REPO_DIR" ]; then
   echo "Cloning repository..."
-  git clone https://${GITHUB_TOKEN}@github.com/LukaNikolaisvili/GITHUB-BOT.git $REPO_DIR
+  git clone https://${GITHUB_TOKEN}@github.com/LukaNikolaisvili/github_bot.git $REPO_DIR
 else
   echo "Repository already exists. Pulling latest changes..."
   cd $REPO_DIR || exit 1
-  git config pull.rebase false # Configure git to use merge strategy
   git pull
 fi
 
