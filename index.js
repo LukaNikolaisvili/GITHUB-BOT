@@ -5,9 +5,9 @@ const jsonfile = require('jsonfile');
 const path = require('path');
 const fs = require('fs');
 
-const FILE_PATH = path.join(__dirname, 'output.txt');
 const REPO_URL = "https://github.com/LukaNikolaisvili/GITHUB-BOT.git";
 const REPO_DIR = "/var/jenkins_home/workspace/GITHUB-BOT/GITHUB-BOT";
+const FILE_PATH = path.join(REPO_DIR, 'output.txt');
 
 // Function to execute shell commands
 const execute = command => new Promise((resolve, reject) => {
@@ -31,7 +31,7 @@ const makeCommit = async (n) => {
     await execute(`git clone https://${process.env.GITHUB_TOKEN}@github.com/LukaNikolaisvili/GITHUB-BOT.git ${REPO_DIR}`);
   } else {
     console.log("Repository already exists. Pulling latest changes...");
-    await execute(`cd ${REPO_DIR} && git pull`);
+    await execute(`cd ${REPO_DIR} && git config pull.rebase false && git pull`);
   }
 
   const git = simpleGit(REPO_DIR);  // Initialize simple-git after ensuring the directory exists

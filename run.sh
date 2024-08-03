@@ -14,6 +14,7 @@ if [ ! -d "$REPO_DIR" ]; then
 else
   echo "Repository already exists. Pulling latest changes..."
   cd $REPO_DIR || exit 1
+  git config pull.rebase false # Configure git to use merge strategy
   git pull
 fi
 
