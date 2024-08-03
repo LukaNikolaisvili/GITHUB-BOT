@@ -7,7 +7,7 @@ const fs = require('fs');
 
 const FILE_PATH = path.resolve(__dirname, 'output.txt');
 const REPO_URL = "https://github.com/LukaNikolaisvili/GITHUB-BOT.git";
-const REPO_DIR = "/var/jenkins_home/workspace/test/GITHUB-BOT";
+const REPO_DIR = "/var/jenkins_home/workspace/GITHUB-BOT/GITHUB-BOT";
 
 // Function to execute shell commands
 const execute = command => new Promise((resolve, reject) => {
