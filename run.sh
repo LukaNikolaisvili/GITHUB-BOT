@@ -28,8 +28,13 @@ fi
 # Navigate to the repository directory
 cd $REPO_DIR || { echo "Failed to change directory to $REPO_DIR"; exit 1; }
 
-# Install required Node.js modules
-npm install
+# Check if package.json exists
+if [ ! -f package.json ]; then
+  echo "package.json not found. Skipping npm install."
+else
+  # Install required Node.js modules
+  npm install
+fi
 
 # Execute the Node.js script
 node /var/jenkins_home/workspace/GITHUB_BOT/GITHUB-BOT/index.js
