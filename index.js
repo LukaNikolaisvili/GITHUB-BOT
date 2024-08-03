@@ -31,7 +31,7 @@ const makeCommit = async (n) => {
     await execute(`git clone https://${process.env.GITHUB_TOKEN}@github.com/LukaNikolaisvili/GITHUB-BOT.git ${REPO_DIR}`);
   } else {
     console.log("Repository already exists. Pulling latest changes...");
-    await execute(`cd ${REPO_DIR} && git config pull.rebase false && git pull`);
+    await execute(`cd ${REPO_DIR} && git pull`);
   }
 
   const git = simpleGit(REPO_DIR);  // Initialize simple-git after ensuring the directory exists
@@ -50,7 +50,7 @@ const makeCommit = async (n) => {
     await git.commit(DATE, { '--date': DATE });
   }
 
-  await git.push('https://' + process.env.GITHUB_TOKEN + '@github.com/LukaNikolaisvili/GITHUB-BOT.git', 'main'); // or 'master' on older setups
+  await git.push('origin', 'main'); // or 'master' on older setups
 };
 
 makeCommit(500).catch(err => console.error(err));
