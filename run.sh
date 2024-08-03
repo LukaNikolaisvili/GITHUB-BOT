@@ -22,7 +22,6 @@ else
     exit 1
   fi
   
-  git config pull.rebase false # Configure git to use merge strategy
   git pull
 fi
 
