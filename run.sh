@@ -18,6 +18,7 @@ else
   # Check for unmerged files
   if git ls-files -u | grep -q '^'; then
     echo "Unmerged files detected. Please resolve conflicts manually."
+    git status
     exit 1
   fi
   
