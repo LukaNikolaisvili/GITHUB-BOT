@@ -2,7 +2,7 @@
 
 # Define the repository URL and directory
 REPO_URL="https://github.com/LukaNikolaisvili/GITHUB-BOT.git"
-REPO_DIR="/var/jenkins_home/workspace/test/GITHUB-BOT"
+REPO_DIR="/var/jenkins_home/workspace/GITHUB-BOT/GITHUB-BOT"
 
 # Ensure the repository directory is safe for Git
 git config --global --add safe.directory $REPO_DIR
